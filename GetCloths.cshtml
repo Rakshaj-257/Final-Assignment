@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DataComponent.Boutique>
+
+@{
+    ViewBag.Title = "GetCloths";
+}
+<h2>GetCloths</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddNewCloth")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CBrand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPrice)
+            </td>
+            <td>
+                
+                @Html.ActionLink("Update", "UpdateCloth", new { id = item.CId }) |
+                @Html.ActionLink("Delete", "DeleteCloth", new { id = item.CId })
+            </td>
+        </tr>
+    }
+
+</table>
